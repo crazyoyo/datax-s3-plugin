@@ -18,7 +18,7 @@ S3Reader实现了从AWS S3读取数据并转为DataX协议的功能，S3本身�
 
 2. 支持类CSV格式文件，自定义分隔符。
 
-3. 支持多种类型数据读取(使用String表示)，支持列裁剪，支持列常量
+3. 支持多种类型数据读取(使用String表示)，支持列裁剪，支持列常量。
 
 4. 支持递归读取、支持文件名过滤。
 
@@ -47,12 +47,13 @@ S3Reader实现了从AWS S3读取数据并转为DataX协议的功能，S3本身�
                 "reader": {
                     "name": "s3reader",
                     "parameter": {
-                        "endpoint": "http://oss.aliyuncs.com",
+                        "endpoint": "s3.xxxxxxxxxxx.amazonaws.com",
+                        "region": "ap-southeast-1",
                         "accessId": "",
                         "accessKey": "",
-                        "bucket": "myBucket",
+                        "bucket": "Bucket",
                         "object": [
-                            "bazhen/*"
+                            "test/*"
                         ],
                         "column": [
                             {
@@ -85,7 +86,15 @@ S3Reader实现了从AWS S3读取数据并转为DataX协议的功能，S3本身�
 
 * **endpoint**
 
-	* 描述：S3 Server的EndPoint地址，例如http://oss.aliyuncs.com。
+	* 描述：S3 Server的EndPoint地址，例如s3.xxxxxxxxxxx.amazonaws.com。
+
+	* 必选：是 <br />
+
+	* 默认值：无 <br />
+
+* **region**
+
+	* 描述：S3 Server的Region地址，例如ap-southeast-1。
 
 	* 必选：是 <br />
 
@@ -262,14 +271,7 @@ S3本身不提供数据类型，该类型是DataX S3Reader定义：
 
 ## 4 性能报告
 
-|并发数|DataX 流量|Datax 记录数|
-|--------|--------| --------|
-|1|	971.40KB/s	|10047rec/s	|
-|2| 1.81MB/s |	19181rec/s |
-|4| 3.46MB/s|	36695rec/s |
-|8| 6.57MB/s | 69289 records/s |
-|16|7.92MB/s| 83920 records/s|
-|32|7.87MB/s| 83350 records/s|
+略
 
 ## 5 约束限制
 

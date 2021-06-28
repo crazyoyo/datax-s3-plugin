@@ -47,11 +47,12 @@ S3Writer实现了从DataX协议转为S3中的TXT文件功能，S3本身是无结
                 "writer": {
                       "name": "s3writer",
                       "parameter": {
-                        "endpoint": "http://oss.aliyuncs.com",
+                        "endpoint": "s3.xxxxxxxxxxx.amazonaws.com",
+                        "region": "ap-southeast-1",
                         "accessId": "",
                         "accessKey": "",
-                        "bucket": "myBucket",
-                        "object": "cdo/datax",
+                        "bucket": "Bucket",
+                        "object": "datax",
                         "encoding": "UTF-8",
                         "fieldDelimiter": ",",
                         "writeMode": "truncate|append|nonConflict"
@@ -67,7 +68,15 @@ S3Writer实现了从DataX协议转为S3中的TXT文件功能，S3本身是无结
 
 * **endpoint**
 
-	* 描述：S3 Server的EndPoint地址，例如http://oss.aliyuncs.com。
+	* 描述：S3 Server的EndPoint地址，例如s3.xxxxxxxxxxx.amazonaws.com。
+
+	* 必选：是 <br />
+
+	* 默认值：无 <br />
+
+* **region**
+
+	* 描述：S3 Server的Region地址，例如ap-southeast-1。
 
 	* 必选：是 <br />
 
@@ -128,7 +137,6 @@ S3Writer实现了从DataX协议转为S3中的TXT文件功能，S3本身是无结
 
 	* 默认值：, <br />
 
-
 * **encoding**
 
 	* 描述：写出文件的编码配置。<br />
@@ -136,7 +144,6 @@ S3Writer实现了从DataX协议转为S3中的TXT文件功能，S3本身是无结
  	* 必选：否 <br />
 
  	* 默认值：utf-8 <br />
-
 
 * **nullFormat**
 
@@ -147,6 +154,7 @@ S3Writer实现了从DataX协议转为S3中的TXT文件功能，S3本身是无结
  	* 必选：否 <br />
 
  	* 默认值：\N <br />
+ 
 * **dateFormat**
 
 	* 描述：日期类型的数据序列化到object中时的格式，例如 "dateFormat": "yyyy-MM-dd"。<br />
@@ -182,8 +190,6 @@ S3Writer实现了从DataX协议转为S3中的TXT文件功能，S3本身是无结
 
 ### 3.3 类型转换
 
-## 4 性能报告
-
 S3本身不提供数据类型，该类型是DataX S3Writer定义：
 
 | DataX 内部类型| S3 数据类型    |
@@ -201,6 +207,9 @@ S3本身不提供数据类型，该类型是DataX S3Writer定义：
 * S3 Boolean是指S3文本中使用Boolean的字符串表示形式，例如"true"、"false"。不区分大小写。
 * S3 Date是指S3文本中使用Date的字符串表示形式，例如"2014-12-31"，Date可以指定format格式。
 
+## 4 性能报告
+
+略
 
 ## 5 约束限制
 
@@ -209,4 +218,3 @@ S3本身不提供数据类型，该类型是DataX S3Writer定义：
 ## 6 FAQ
 
 略
-
