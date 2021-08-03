@@ -1,4 +1,4 @@
-# DataXS3Plugin
+# DataX S3 Plugin
 # 本项目为DataX的S3插件
 ### 下载DataX，下载S3插件：
 * ``` git clone https://github.com/alibaba/DataX ``` 
