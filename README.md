@@ -32,7 +32,7 @@ python bin/datax.py job/s3TOcsv.json
   "job": {
     "setting": {
       "speed": {
-        "channel": 1000
+        "channel": 20
       }
     },
     "content": [
