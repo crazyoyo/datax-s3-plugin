@@ -1,5 +1,5 @@
 # DataX S3 Plugin
-# 本项目为DataX的S3插件
+### 本项目为DataX的S3插件，其功能类似https://help.aliyun.com/document_detail/308261.html.
 ### 下载DataX，下载S3插件：
 * ``` git clone https://github.com/alibaba/DataX ``` 
 * ``` git clone https://github.com/crazyoyo/DataXS3Plugin ``` 
